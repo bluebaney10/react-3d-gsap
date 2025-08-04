@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-//import { ContactShadows } from "@react-three/drei";
 import ModelBottle from "./ModelBottle";
-import { ContactShadows, OrbitControls } from "@react-three/drei";
+import { ContactShadows } from "@react-three/drei";
 
 const Scene = () => {
   return (

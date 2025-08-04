@@ -8,7 +8,6 @@ import BenefitSection from "./sections/BenefitSection";
 import ProductSection from "./sections/ProductSection";
 import AdvantageSection from "./sections/AdvantageSection";
 import ProductOverview from "./components/ProductOverview";
-import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
