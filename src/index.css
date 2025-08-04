@@ -1,13 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-
-/* @font-face {
-  font-family: "ProximaNova, sans-serif";
-  src: url("/fonts/ProximaNova-Regular.otf");
-} */
 
 @theme {
   --primary-color: #222123;
+  --primary-text-color: #000000;
+  --secondary-text-color: #333333;
   --font-sans: "Antonio", sans-serif;
   --font-paragraph: "ProximaNova, sans-serif";
 }
@@ -17,9 +14,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #faeade;
-  color: #523122;
-  font-family: "Antonio", sans-serif;
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -30,23 +25,93 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+@theme {
+  --spacing: 1rem;
+}
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
   }
+
+  .flex-y-center {
+    @apply flex items-center;
+  }
+
   .col-center {
     @apply flex flex-col justify-center items-center;
   }
   .abs-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
-  .general-title {
-    @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw];
+  .abs-y-center {
+    @apply absolute top-1/2 -translate-y-1/2;
+  }
+
+  .fixed-center {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
 }
 
 @layer components {
-  .paragraph-line {
-    @apply text-nowrap overflow-hidden;
+  h1 {
+    @apply lg:text-[14rem] text-[4rem] font-bold leading-none;
+  }
+
+  h2 {
+    @apply lg:text-[4rem] text-[2rem] font-bold leading-none;
+
+    span {
+      @apply block;
+    }
+  }
+
+  p {
+    @apply text-[1rem];
+  }
+
+  .bt-primary {
+    @apply bg-white hover:bg-gray-100 hover:transition-all text-gray-800 font-semibold px-4 border border-gray-400 rounded-full shadow h-[40px] transition-all cursor-pointer;
+  }
+
+  .c-container {
+    @apply w-full mx-auto px-2 lg:px-4 h-full;
+  }
+
+  section {
+    @apply relative w-screen h-dvh overflow-hidden;
+  }
+
+  .hero-section {
+    .desc {
+      clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    }
+  }
+
+  .message-section {
+    color: var(--secondary-text-color);
+    @apply bg-black;
+  }
+
+  .benefit-section {
+    .circle {
+      clip-path: circle(0% at 50% 50%);
+    }
+  }
+
+  .advantage-section {
+    @apply bg-black text-white;
+  }
+
+  .product-overview {
+    @apply fixed z-20 lg:bottom-8 bottom-2 h-[140px];
+    .items {
+      .item {
+        @apply flex items-end justify-center;
+        .content {
+          @apply flex flex-col gap-1;
+        }
+      }
+    }
   }
 }
